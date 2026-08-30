@@ -57,3 +57,59 @@ document.querySelectorAll('[data-app-store]').forEach((link) => {
 
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
+
+const screenshotViewport = document.querySelector('.screenshot-viewport');
+const screenshotSlides = Array.from(document.querySelectorAll('.screenshot-slide'));
+const screenshotPrevious = document.querySelector('.screenshot-previous');
+const screenshotNext = document.querySelector('.screenshot-next');
+const screenshotCounter = document.querySelector('.screenshot-counter');
+
+if (screenshotViewport && screenshotSlides.length && screenshotPrevious && screenshotNext && screenshotCounter) {
+  let activeScreenshot = 0;
+  let screenshotScrollFrame;
+
+  const updateScreenshotControls = (index) => {
+    activeScreenshot = Math.max(0, Math.min(index, screenshotSlides.length - 1));
+    screenshotCounter.textContent = `${activeScreenshot + 1} / ${screenshotSlides.length}`;
+    screenshotPrevious.disabled = activeScreenshot === 0;
+    screenshotNext.disabled = activeScreenshot === screenshotSlides.length - 1;
+  };
+
+  const showScreenshot = (index) => {
+    const nextIndex = Math.max(0, Math.min(index, screenshotSlides.length - 1));
+    screenshotViewport.scrollTo({
+      left: screenshotSlides[nextIndex].offsetLeft - screenshotSlides[0].offsetLeft,
+      behavior: reducedMotion ? 'auto' : 'smooth'
+    });
+    updateScreenshotControls(nextIndex);
+  };
+
+  screenshotPrevious.addEventListener('click', () => showScreenshot(activeScreenshot - 1));
+  screenshotNext.addEventListener('click', () => showScreenshot(activeScreenshot + 1));
+
+  screenshotViewport.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      showScreenshot(activeScreenshot - 1);
+    }
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      showScreenshot(activeScreenshot + 1);
+    }
+  });
+
+  screenshotViewport.addEventListener('scroll', () => {
+    window.cancelAnimationFrame(screenshotScrollFrame);
+    screenshotScrollFrame = window.requestAnimationFrame(() => {
+      const nearestIndex = screenshotSlides.reduce((nearest, slide, index) => {
+        const firstSlideOffset = screenshotSlides[0].offsetLeft;
+        const currentDistance = Math.abs(slide.offsetLeft - firstSlideOffset - screenshotViewport.scrollLeft);
+        const nearestDistance = Math.abs(screenshotSlides[nearest].offsetLeft - firstSlideOffset - screenshotViewport.scrollLeft);
+        return currentDistance < nearestDistance ? index : nearest;
+      }, 0);
+      updateScreenshotControls(nearestIndex);
+    });
+  }, { passive: true });
+
+  updateScreenshotControls(0);
+}

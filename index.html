@@ -58,7 +58,6 @@
           <img src="assets/screenshots/01-dashboard.png" alt="BaselineLab Dashboard showing deposit accounts, card debt, net cash, a 30-day cash projection, and upcoming activity" />
           <figcaption>The actual BaselineLab Dashboard with demo data.</figcaption>
         </figure>
-        <div class="scroll-cue" aria-hidden="true">SCROLL TO EXPLORE <span></span></div>
       </section>
 
       <section class="statement" id="features">
@@ -75,12 +74,23 @@
       <section class="screenshots-section" id="screenshots">
         <p class="section-label reveal">02 — THE ACTUAL APP</p>
         <div class="screenshots-heading reveal"><h2>Built around the<br/><em>decisions ahead.</em></h2><p>Every image below comes directly from BaselineLab’s demo-data user manual.</p></div>
-        <div class="screenshot-grid">
-          <figure class="screenshot-card screenshot-card-wide reveal"><img src="assets/screenshots/11-forecast-total.png" alt="BaselineLab total-cash Forecast with a 365-day horizon and no projected shortfalls" loading="lazy"/><figcaption><b>Forecast</b><span>Choose a horizon from 30 days to five years and see dated shortfall warnings.</span></figcaption></figure>
-          <figure class="screenshot-card reveal"><img src="assets/screenshots/05-import-preview.png" alt="BaselineLab import preview classifying new and duplicate statement transactions" loading="lazy"/><figcaption><b>Import preview</b><span>Approve new transactions and review duplicates before anything is saved.</span></figcaption></figure>
-          <figure class="screenshot-card reveal"><img src="assets/screenshots/06-recurring.png" alt="BaselineLab recurring-series list with detected and confirmed income and expenses" loading="lazy"/><figcaption><b>Recurring series</b><span>Confirm what should enter the forecast and dismiss what should not.</span></figcaption></figure>
-          <figure class="screenshot-card reveal"><img src="assets/screenshots/07-future-events.png" alt="BaselineLab future-events list for planned income and expenses" loading="lazy"/><figcaption><b>Future events</b><span>Add the things you know are coming that history cannot show.</span></figcaption></figure>
-          <figure class="screenshot-card screenshot-card-wide reveal"><img src="assets/screenshots/13-money-map.png" alt="BaselineLab Money Map showing monthly income, transfers, card payments, and spending flows" loading="lazy"/><figcaption><b>Money Map</b><span>See regular money movements on one screen, with flow thickness proportional to monthly dollars.</span></figcaption></figure>
+        <div class="screenshot-carousel reveal" aria-label="BaselineLab app screenshot gallery">
+          <div class="screenshot-viewport" id="screenshot-gallery" tabindex="0">
+            <div class="screenshot-track">
+              <figure class="screenshot-slide"><img src="assets/screenshots/11-forecast-total.png" alt="BaselineLab total-cash Forecast with a 365-day horizon and no projected shortfalls" loading="lazy"/><figcaption><b>Forecast</b><span>Choose a horizon from 30 days to five years and see dated shortfall warnings.</span></figcaption></figure>
+              <figure class="screenshot-slide"><img src="assets/screenshots/05-import-preview.png" alt="BaselineLab import preview classifying new and duplicate statement transactions" loading="lazy"/><figcaption><b>Import preview</b><span>Approve new transactions and review duplicates before anything is saved.</span></figcaption></figure>
+              <figure class="screenshot-slide"><img src="assets/screenshots/06-recurring.png" alt="BaselineLab recurring-series list with detected and confirmed income and expenses" loading="lazy"/><figcaption><b>Recurring series</b><span>Confirm what should enter the forecast and dismiss what should not.</span></figcaption></figure>
+              <figure class="screenshot-slide"><img src="assets/screenshots/07-future-events.png" alt="BaselineLab future-events list for planned income and expenses" loading="lazy"/><figcaption><b>Future events</b><span>Add the things you know are coming that history cannot show.</span></figcaption></figure>
+              <figure class="screenshot-slide"><img src="assets/screenshots/13-money-map.png" alt="BaselineLab Money Map showing monthly income, transfers, card payments, and spending flows" loading="lazy"/><figcaption><b>Money Map</b><span>See regular money movements on one screen, with flow thickness proportional to monthly dollars.</span></figcaption></figure>
+            </div>
+          </div>
+          <div class="screenshot-controls">
+            <span class="screenshot-counter" aria-live="polite">1 / 5</span>
+            <div>
+              <button class="screenshot-nav screenshot-previous" type="button" aria-controls="screenshot-gallery" aria-label="Previous screenshot" disabled>←</button>
+              <button class="screenshot-nav screenshot-next" type="button" aria-controls="screenshot-gallery" aria-label="Next screenshot">→</button>
+            </div>
+          </div>
         </div>
       </section>
 

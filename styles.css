@@ -13,13 +13,22 @@
 .screenshots-heading{display:grid;grid-template-columns:1.35fr .65fr;gap:8vw;align-items:end}
 .screenshots-heading h2{font-size:clamp(46px,6vw,86px);line-height:.97;letter-spacing:-3.5px;font-weight:500;margin:45px 0 70px}
 .screenshots-heading p{color:#a7b3b1;line-height:1.8;margin-bottom:78px}
-.screenshot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
-.screenshot-card{margin:0;min-width:0}
-.screenshot-card-wide{grid-column:1/-1}
-.screenshot-card img{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:#191919;box-shadow:0 24px 55px rgba(0,0,0,.24)}
-.screenshot-card figcaption{display:flex;gap:24px;align-items:baseline;padding:18px 4px 12px}
-.screenshot-card figcaption b{font-size:15px;white-space:nowrap}
-.screenshot-card figcaption span{color:#a7b3b1;font-size:13px;line-height:1.6}
+.screenshot-carousel{max-width:1240px;margin:0 auto}
+.screenshot-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;outline:none}
+.screenshot-viewport::-webkit-scrollbar{display:none}
+.screenshot-viewport:focus-visible{outline:2px solid var(--orange);outline-offset:8px}
+.screenshot-track{display:flex;gap:28px}
+.screenshot-slide{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always}
+.screenshot-slide img{display:block;width:100%;aspect-ratio:68/41;object-fit:contain;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:#191919;box-shadow:0 24px 55px rgba(0,0,0,.24)}
+.screenshot-slide figcaption{display:grid;grid-template-columns:minmax(120px,.25fr) 1fr;gap:24px;align-items:baseline;padding:20px 4px 10px}
+.screenshot-slide figcaption b{font-size:16px;white-space:nowrap}
+.screenshot-slide figcaption span{color:#a7b3b1;font-size:14px;line-height:1.6}
+.screenshot-controls{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
+.screenshot-counter{color:#a7b3b1;font:11px var(--mono);letter-spacing:1px}
+.screenshot-controls>div{display:flex;gap:10px}
+.screenshot-nav{width:48px;height:48px;border:1px solid rgba(255,255,255,.32);border-radius:50%;background:transparent;color:#f2f0e9;font-size:20px;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
+.screenshot-nav:hover:not(:disabled),.screenshot-nav:focus-visible{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.screenshot-nav:disabled{cursor:default;opacity:.28}
 .policy-page{max-width:900px;margin:0 auto;padding:110px 6vw 130px}
 .policy-page>h1{font-size:clamp(48px,7vw,84px);line-height:.96;letter-spacing:-3.5px;margin:36px 0 20px}
 .policy-updated{color:var(--muted);font:10px var(--mono);letter-spacing:.6px;margin-bottom:72px}
@@ -43,10 +52,10 @@
   .screenshots-heading{grid-template-columns:1fr;gap:0}
   .screenshots-heading h2{font-size:48px;letter-spacing:-2px;margin-bottom:25px}
   .screenshots-heading p{margin-bottom:50px}
-  .screenshot-grid{grid-template-columns:1fr;gap:42px}
-  .screenshot-card-wide{grid-column:auto}
-  .screenshot-card figcaption{display:block}
-  .screenshot-card figcaption span{display:block;margin-top:7px}
+  .screenshot-track{gap:16px}
+  .screenshot-slide figcaption{display:block;padding-top:16px}
+  .screenshot-slide figcaption span{display:block;margin-top:7px}
+  .screenshot-controls{margin-top:12px}
   .policy-page{padding:75px 6vw 90px}
   .policy-page>h1{font-size:50px;letter-spacing:-2.4px}
   .policy-summary{padding:26px 24px}
