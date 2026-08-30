@@ -40,13 +40,13 @@ const appStoreUrl = typeof config.appStoreUrl === 'string' ? config.appStoreUrl.
 document.querySelectorAll('[data-app-store]').forEach((link) => {
   if (appStoreUrl) {
     link.href = appStoreUrl;
-    link.textContent = config.appStoreLabel || 'Download on the App Store';
+    link.textContent = config.appStoreLabel || 'Download for Mac and iPad on the App Store';
     link.classList.remove('is-coming-soon');
     link.removeAttribute('aria-disabled');
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener');
   } else {
-    link.textContent = config.comingSoonLabel || 'Coming soon on the App Store';
+    link.textContent = config.comingSoonLabel || 'Coming soon on the App Store for Mac and iPad';
     link.classList.add('is-coming-soon');
     link.setAttribute('aria-disabled', 'true');
     link.addEventListener('click', (event) => {

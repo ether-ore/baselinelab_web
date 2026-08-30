@@ -20,9 +20,9 @@
     <meta name="twitter:image" content="https://baselinelab.app/assets/screenshots/01-dashboard.png" />
     <title>BaselineLab — See what comes next</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260830-gallery-zoom" />
+    <link rel="stylesheet" href="styles.css?v=20260830-brief" />
     <script src="site-config.js"></script>
-    <script src="script.js?v=20260830-gallery-zoom" defer></script>
+    <script src="script.js?v=20260830-brief" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -35,8 +35,8 @@
         <a href="#features">Features</a>
         <a href="#workflow">How it works</a>
         <a href="privacy.html">Privacy</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <a class="button button-small app-store-link is-coming-soon" href="#availability" data-app-store aria-disabled="true">Coming soon on the App Store</a>
       <button class="menu-button" type="button" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
     </header>
 
@@ -44,11 +44,12 @@
       <section class="hero" id="top">
         <div class="eyebrow reveal"><span></span> Private by design · One purchase, no subscription</div>
         <h1 class="reveal">Will you have the money<br/><em>when you need it?</em></h1>
-        <p class="hero-copy reveal">Import your bank and card statements. BaselineLab learns what comes in, what goes out, what repeats, and how money moves between your accounts—then projects every account forward, day by day, up to five years.</p>
+        <p class="hero-copy reveal">Import your bank and card statements. BaselineLab learns what comes in, what goes out, what repeats, and how money moves between your accounts — then projects every account forward, day by day, up to five years, and tells you the two things that matter: <strong>when you'll run short, and how much you'll need.</strong></p>
         <div class="hero-actions reveal">
-          <a class="button app-store-link is-coming-soon" href="#availability" data-app-store aria-disabled="true">Coming soon on the App Store</a>
-          <a class="text-link" href="#workflow">See how it works <span aria-hidden="true">↓</span></a>
+          <a class="button app-store-link is-coming-soon" href="#availability" data-app-store aria-disabled="true">Coming soon on the App Store for Mac and iPad</a>
+          <a class="button button-secondary" href="mailto:blackjack_wonk@proton.me?subject=BaselineLab%20launch%20notification&amp;body=Please%20notify%20me%20when%20BaselineLab%20is%20available%20for%20Mac%20and%20iPad.">Get notified at launch <span aria-hidden="true">→</span></a>
         </div>
+        <a class="text-link hero-workflow-link reveal" href="#workflow">See how it works <span aria-hidden="true">↓</span></a>
 
         <div class="privacy-promise reveal" aria-label="BaselineLab privacy promise">
           <span>Data lives on your device</span><span>Private iCloud sync</span><span>No analytics</span>
@@ -62,12 +63,24 @@
 
       <section class="statement" id="features">
         <p class="section-label reveal">01 — THE IDEA</p>
-        <h2 class="reveal">Your finances should tell you<br/>what comes <em>next.</em></h2>
+        <h2 class="reveal">Your finances should tell you<br/>what's <em>coming.</em></h2>
         <div class="statement-copy reveal"><p>Most finance tools are good at showing where your money went. BaselineLab’s center of gravity is the future: recurring bills and income, planned events, account-level cash flow, and early shortfall warnings.</p><p>Your data lives on your device. When you choose to use iCloud, it syncs privately between your Mac and iPad through your own Apple account—not through BaselineLab servers.</p></div>
         <div class="feature-grid">
           <article class="feature-card reveal"><span class="number">01</span><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 45V19m0 26h46"/><path d="m15 40 10-12 9 7 15-18"/><circle cx="49" cy="17" r="3"/></svg><h3>Bring in real history</h3><p>Import QFX, OFX, QBO, and CSV statements. Preview every row before it is written and review exact or likely duplicates.</p></article>
-          <article class="feature-card reveal"><span class="number">02</span><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="9" y="12" width="19" height="40" rx="2"/><rect x="36" y="12" width="19" height="40" rx="2"/><path d="M14 40l5-8 4 3M41 31l4-4 5 8"/></svg><h3>Teach it your rhythm</h3><p>Confirm recurring bills and income, link transfers, map card payments, and add future events that history cannot know yet.</p></article>
-          <article class="feature-card reveal"><span class="number">03</span><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="m23 32 6 6 13-15"/></svg><h3>Get an early warning</h3><p>Project every account up to five years and see when money may run short—and how much more you will need by that date.</p></article>
+          <article class="feature-card reveal"><span class="number">02</span><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="9" y="12" width="19" height="40" rx="2"/><rect x="36" y="12" width="19" height="40" rx="2"/><path d="M14 40l5-8 4 3M41 31l4-4 5 8"/></svg><h3>Teach it your rhythm</h3><p>Confirm recurring bills and income, then map how your money moves — which account pays each card, and the transfers you make on schedule. Add future events history can't know yet.</p></article>
+          <article class="feature-card reveal"><span class="number">03</span><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="m23 32 6 6 13-15"/></svg><h3>Get an early warning</h3><p>Project every account up to five years and see when money may run short — and how much more you will need by that date.</p><p class="feature-proof">Card autopay is modeled the way it really works — statement balances, real closing dates, payments limited by what the funding account actually holds.</p></article>
+        </div>
+        <div class="cash-pool-feature reveal">
+          <div>
+            <p class="section-label">THE CASH POOL</p>
+            <h3>Warnings that respect how you actually manage money.</h3>
+            <p>Real households move money to where it's needed — so BaselineLab's forecast does too. Accounts cover each other before anything is called short, which means a warning isn't “one account looks scary.” It means the whole plan is short — and the warning tells you how much more you'll need, by what date.</p>
+          </div>
+          <blockquote class="warning-signal">
+            <span>BASELINELAB WARNING</span>
+            <strong>Need $620 more by August 8.</strong>
+            <p>That's a BaselineLab warning: a date, an amount, and time to do something about it.</p>
+          </blockquote>
         </div>
       </section>
 
@@ -77,9 +90,9 @@
         <div class="screenshot-carousel reveal" aria-label="BaselineLab app screenshot gallery">
           <div class="screenshot-viewport" id="screenshot-gallery" tabindex="0">
             <div class="screenshot-track">
-              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Forecast screenshot full size"><img src="assets/screenshots/11-forecast-total.png" alt="BaselineLab total-cash Forecast with a 365-day horizon and no projected shortfalls" loading="lazy"/></button><figcaption><b>Forecast</b><span>Choose a horizon from 30 days to five years and see dated shortfall warnings.</span></figcaption></figure>
+              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Forecast screenshot full size"><img src="assets/screenshots/11-forecast-total.png" alt="BaselineLab total-cash Forecast with a 365-day horizon and no projected shortfalls" loading="lazy"/></button><figcaption><b>Forecast</b><span>Project every account from 30 days to five years — then click any day to see exactly which bills, payments, and plans move the line. No black box: the forecast shows its work.</span></figcaption></figure>
               <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Import preview screenshot full size"><img src="assets/screenshots/05-import-preview.png" alt="BaselineLab import preview classifying new and duplicate statement transactions" loading="lazy"/></button><figcaption><b>Import preview</b><span>Approve new transactions and review duplicates before anything is saved.</span></figcaption></figure>
-              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Recurring series screenshot full size"><img src="assets/screenshots/06-recurring.png" alt="BaselineLab recurring-series list with detected and confirmed income and expenses" loading="lazy"/></button><figcaption><b>Recurring series</b><span>Confirm what should enter the forecast and dismiss what should not.</span></figcaption></figure>
+              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Recurring series screenshot full size"><img src="assets/screenshots/06-recurring.png" alt="BaselineLab recurring-series list with detected and confirmed income and expenses" loading="lazy"/></button><figcaption><b>Recurring series</b><span>Confirm your bills — and your income — so the forecast projects both sides. Dismiss the coincidences.</span></figcaption></figure>
               <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Future events screenshot full size"><img src="assets/screenshots/07-future-events.png" alt="BaselineLab future-events list for planned income and expenses" loading="lazy"/></button><figcaption><b>Future events</b><span>Add the things you know are coming that history cannot show.</span></figcaption></figure>
               <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Money Map screenshot full size"><img src="assets/screenshots/13-money-map.png" alt="BaselineLab Money Map showing monthly income, transfers, card payments, and spending flows" loading="lazy"/></button><figcaption><b>Money Map</b><span>See regular money movements on one screen, with flow thickness proportional to monthly dollars.</span></figcaption></figure>
             </div>
@@ -113,21 +126,42 @@
             <a class="text-link" href="privacy.html">Read the privacy policy <span aria-hidden="true">→</span></a>
           </div>
         </div>
+        <div class="privacy-points">
+          <article class="reveal"><h3>No bank credentials, ever.</h3><p>BaselineLab never asks for your bank login and uses no third-party aggregator. You import the statement files your bank already gives you.</p></article>
+          <article class="reveal"><h3>Your data is portable.</h3><p>Export everything at any time — per-account CSVs plus a complete snapshot of your data. Nothing is held hostage.</p></article>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <p class="section-label reveal">05 — QUESTIONS, ANSWERED</p>
+        <div class="faq-heading reveal"><h2>Clear answers<br/>before you <em>buy.</em></h2><p>The full illustrated <a href="docs/manual.html">user manual</a> ships with BaselineLab — and you can read it now.</p></div>
+        <div class="faq-list">
+          <details class="reveal"><summary>What does it run on?</summary><p>BaselineLab is for <strong>Mac and iPad</strong> (macOS 15+, iPadOS 18+), with private iCloud sync between them. There is no iPhone version at launch.</p></details>
+          <details class="reveal"><summary>Does it connect to my bank?</summary><p>No — by design. You import the statement files your bank already provides (QFX, OFX, QBO, or CSV). That means no bank passwords shared, no third-party aggregator sitting between you and your accounts, and nothing that breaks when a bank changes its login page.</p></details>
+          <details class="reveal"><summary>Which file formats does it read?</summary><p>QFX, OFX, QBO, and CSV — every bank and card issuer offers at least one of these from its statement or activity page. Imports are previewed row by row, with duplicate detection, before anything is saved.</p></details>
+          <details class="reveal"><summary>Is it a subscription?</summary><p>No. Buy it once, use it. No account to create, no monthly fee.</p></details>
+          <details class="reveal"><summary>Where is my financial data stored?</summary><p>On your device. If you sign in to iCloud, it syncs privately through <em>your</em> Apple account between your Mac and iPad — BaselineLab operates no servers and receives none of your data. You can export everything (CSVs plus a full snapshot) at any time.</p></details>
+          <details class="reveal"><summary>How is this different from a budgeting app?</summary><p>Budgeting apps look backward at categories. BaselineLab looks forward at cash: it projects every account day by day, models how your accounts cover each other, and warns you — with a date and a dollar amount — when your plan won't cover what's coming.</p></details>
+        </div>
+        <a class="manual-callout reveal" href="docs/manual.html"><span>READ BEFORE YOU BUY</span><strong>Open the full illustrated user manual</strong><i aria-hidden="true">→</i></a>
       </section>
 
       <section class="cta" id="availability">
         <div class="cta-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
         <p class="section-label reveal">COMING SOON</p>
         <h2 class="reveal">A calmer view of<br/>what comes <em>next.</em></h2>
-        <p class="reveal">BaselineLab is preparing for release on the App Store for Mac and iPad. Buy it once and keep using it—no subscription required.</p>
-        <a class="button button-light app-store-link is-coming-soon reveal" href="#availability" data-app-store aria-disabled="true">Coming soon on the App Store</a>
+        <p class="reveal">BaselineLab is preparing for release on the App Store for Mac and iPad. Buy it once and keep using it — no subscription required.</p>
+        <div class="cta-actions reveal">
+          <a class="button button-light app-store-link is-coming-soon" href="#availability" data-app-store aria-disabled="true">Coming soon on the App Store for Mac and iPad</a>
+          <a class="button button-outline-light" href="mailto:blackjack_wonk@proton.me?subject=BaselineLab%20launch%20notification&amp;body=Please%20notify%20me%20when%20BaselineLab%20is%20available%20for%20Mac%20and%20iPad.">Get notified at launch <span aria-hidden="true">→</span></a>
+        </div>
       </section>
     </main>
 
     <footer>
       <a class="brand brand-footer" href="#top"><svg aria-hidden="true" viewBox="0 0 40 40"><path d="M5 27.5 13.5 19l6 6L31 13.5"/><path d="M5 34h30"/></svg><span>baseline<span>lab</span></span></a>
       <p>Local-first personal finance for a clearer view ahead.</p>
-      <div><a href="#features">Features</a><a href="#workflow">How it works</a><a href="privacy.html">Privacy</a></div>
+      <div><a href="#features">Features</a><a href="#workflow">How it works</a><a href="#faq">FAQ</a><a href="docs/manual.html">User manual</a><a href="privacy.html">Privacy</a></div>
       <small>© <span id="year">2026</span> BaselineLab · Stillward Labs</small>
     </footer>
 

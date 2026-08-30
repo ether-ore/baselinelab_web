@@ -16,7 +16,7 @@ Then open <http://localhost:8000>.
 
 App Store buttons are controlled by `site-config.js`.
 
-While the app is not yet listed, leave `appStoreUrl` empty. When the listing is live, paste its full App Store URL into that field. Every availability button will automatically change from “Coming soon on the App Store” to “Download on the App Store.”
+While the app is not yet listed, leave `appStoreUrl` empty. When the listing is live, paste its full App Store URL into that field. Every availability button will automatically change from “Coming soon on the App Store for Mac and iPad” to “Download for Mac and iPad on the App Store.”
 
 ## Deployment
 

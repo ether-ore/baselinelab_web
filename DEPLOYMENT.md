@@ -26,7 +26,7 @@ All website links and assets use relative paths, so the site also works at the r
 
 The availability buttons are configured in `site-config.js`.
 
-Before release, keep `appStoreUrl` empty. When the App Store listing is live, set it to the full product URL. The buttons will become active and their labels will change automatically; no HTML edits are required.
+Before release, keep `appStoreUrl` empty. When the Mac and iPad App Store listing is live, set it to the full product URL. The buttons will become active and their labels will change automatically; no HTML edits are required.
 
 ## Privacy page
 
