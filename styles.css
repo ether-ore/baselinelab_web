@@ -13,13 +13,17 @@
 .screenshots-heading{display:grid;grid-template-columns:1.35fr .65fr;gap:8vw;align-items:end}
 .screenshots-heading h2{font-size:clamp(46px,6vw,86px);line-height:.97;letter-spacing:-3.5px;font-weight:500;margin:45px 0 70px}
 .screenshots-heading p{color:#a7b3b1;line-height:1.8;margin-bottom:78px}
-.screenshot-carousel{max-width:1240px;margin:0 auto}
+.screenshot-carousel{max-width:1080px;margin:0 auto}
 .screenshot-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;outline:none}
 .screenshot-viewport::-webkit-scrollbar{display:none}
 .screenshot-viewport:focus-visible{outline:2px solid var(--orange);outline-offset:8px}
 .screenshot-track{display:flex;gap:28px}
 .screenshot-slide{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always}
-.screenshot-slide img{display:block;width:100%;aspect-ratio:68/41;object-fit:contain;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:#191919;box-shadow:0 24px 55px rgba(0,0,0,.24)}
+.screenshot-open{display:block;position:relative;width:100%;padding:0;border:0;border-radius:14px;background:transparent;color:#f2f0e9;cursor:zoom-in}
+.screenshot-open::after{content:"View full size ↗";position:absolute;right:14px;bottom:14px;padding:8px 10px;border:1px solid rgba(255,255,255,.24);border-radius:6px;background:rgba(16,40,42,.88);color:#f2f0e9;font:10px var(--mono);letter-spacing:.4px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.screenshot-open img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 260px);margin:0 auto;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:#191919;box-shadow:0 24px 55px rgba(0,0,0,.24)}
+.screenshot-open:hover img,.screenshot-open:focus-visible img{border-color:var(--orange)}
+.screenshot-open:focus-visible{outline:2px solid var(--orange);outline-offset:6px}
 .screenshot-slide figcaption{display:grid;grid-template-columns:minmax(120px,.25fr) 1fr;gap:24px;align-items:baseline;padding:20px 4px 10px}
 .screenshot-slide figcaption b{font-size:16px;white-space:nowrap}
 .screenshot-slide figcaption span{color:#a7b3b1;font-size:14px;line-height:1.6}
@@ -29,6 +33,23 @@
 .screenshot-nav{width:48px;height:48px;border:1px solid rgba(255,255,255,.32);border-radius:50%;background:transparent;color:#f2f0e9;font-size:20px;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
 .screenshot-nav:hover:not(:disabled),.screenshot-nav:focus-visible{background:var(--orange);border-color:var(--orange);color:var(--ink)}
 .screenshot-nav:disabled{cursor:default;opacity:.28}
+.screenshot-lightbox{width:calc(100vw - 28px);height:calc(100vh - 28px);max-width:none;max-height:none;margin:auto;padding:0;border:1px solid rgba(255,255,255,.18);border-radius:16px;background:#0b1f21;color:#f2f0e9;box-shadow:0 35px 100px rgba(0,0,0,.5);overflow:hidden}
+.screenshot-lightbox::backdrop{background:rgba(3,12,13,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lightbox-shell{display:grid;grid-template-rows:auto minmax(0,1fr);height:100%}
+.lightbox-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.14);background:#10282a}
+.lightbox-copy{min-width:0}
+.lightbox-copy b,.lightbox-copy span{display:block}
+.lightbox-copy b{font-size:15px;margin-bottom:4px}
+.lightbox-copy span{overflow:hidden;color:#a7b3b1;font-size:12px;line-height:1.4;text-overflow:ellipsis;white-space:nowrap}
+.lightbox-actions{display:flex;gap:10px}
+.lightbox-zoom,.lightbox-close{height:40px;padding:0 14px;border:1px solid rgba(255,255,255,.28);border-radius:6px;background:transparent;color:#f2f0e9;font:11px var(--mono);cursor:pointer}
+.lightbox-close span{font-size:18px;margin-left:8px;vertical-align:-1px}
+.lightbox-zoom:hover,.lightbox-close:hover,.lightbox-zoom:focus-visible,.lightbox-close:focus-visible{border-color:var(--orange);background:var(--orange);color:var(--ink)}
+.lightbox-stage{display:grid;place-items:center;min-height:0;padding:20px;overflow:auto;background:#071719;cursor:zoom-in}
+.lightbox-image{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 110px);box-shadow:0 20px 60px rgba(0,0,0,.42)}
+.lightbox-stage.is-zoomed{display:block;cursor:zoom-out}
+.lightbox-stage.is-zoomed .lightbox-image{max-width:none;max-height:none;margin:0 auto}
+body.lightbox-open{overflow:hidden}
 .policy-page{max-width:900px;margin:0 auto;padding:110px 6vw 130px}
 .policy-page>h1{font-size:clamp(48px,7vw,84px);line-height:.96;letter-spacing:-3.5px;margin:36px 0 20px}
 .policy-updated{color:var(--muted);font:10px var(--mono);letter-spacing:.6px;margin-bottom:72px}
@@ -53,9 +74,16 @@
   .screenshots-heading h2{font-size:48px;letter-spacing:-2px;margin-bottom:25px}
   .screenshots-heading p{margin-bottom:50px}
   .screenshot-track{gap:16px}
+  .screenshot-open::after{right:8px;bottom:8px;padding:6px 8px;font-size:9px}
   .screenshot-slide figcaption{display:block;padding-top:16px}
   .screenshot-slide figcaption span{display:block;margin-top:7px}
   .screenshot-controls{margin-top:12px}
+  .screenshot-lightbox{width:100vw;height:100dvh;border:0;border-radius:0}
+  .lightbox-toolbar{grid-template-columns:1fr;gap:12px;padding:12px}
+  .lightbox-copy span{white-space:normal}
+  .lightbox-actions{justify-content:space-between}
+  .lightbox-stage{padding:8px}
+  .lightbox-image{max-height:calc(100dvh - 150px)}
   .policy-page{padding:75px 6vw 90px}
   .policy-page>h1{font-size:50px;letter-spacing:-2.4px}
   .policy-summary{padding:26px 24px}

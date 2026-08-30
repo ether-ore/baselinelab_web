@@ -20,9 +20,9 @@
     <meta name="twitter:image" content="https://baselinelab.app/assets/screenshots/01-dashboard.png" />
     <title>BaselineLab — See what comes next</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260830-gallery" />
+    <link rel="stylesheet" href="styles.css?v=20260830-gallery-zoom" />
     <script src="site-config.js"></script>
-    <script src="script.js?v=20260830-gallery" defer></script>
+    <script src="script.js?v=20260830-gallery-zoom" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -77,11 +77,11 @@
         <div class="screenshot-carousel reveal" aria-label="BaselineLab app screenshot gallery">
           <div class="screenshot-viewport" id="screenshot-gallery" tabindex="0">
             <div class="screenshot-track">
-              <figure class="screenshot-slide"><img src="assets/screenshots/11-forecast-total.png" alt="BaselineLab total-cash Forecast with a 365-day horizon and no projected shortfalls" loading="lazy"/><figcaption><b>Forecast</b><span>Choose a horizon from 30 days to five years and see dated shortfall warnings.</span></figcaption></figure>
-              <figure class="screenshot-slide"><img src="assets/screenshots/05-import-preview.png" alt="BaselineLab import preview classifying new and duplicate statement transactions" loading="lazy"/><figcaption><b>Import preview</b><span>Approve new transactions and review duplicates before anything is saved.</span></figcaption></figure>
-              <figure class="screenshot-slide"><img src="assets/screenshots/06-recurring.png" alt="BaselineLab recurring-series list with detected and confirmed income and expenses" loading="lazy"/><figcaption><b>Recurring series</b><span>Confirm what should enter the forecast and dismiss what should not.</span></figcaption></figure>
-              <figure class="screenshot-slide"><img src="assets/screenshots/07-future-events.png" alt="BaselineLab future-events list for planned income and expenses" loading="lazy"/><figcaption><b>Future events</b><span>Add the things you know are coming that history cannot show.</span></figcaption></figure>
-              <figure class="screenshot-slide"><img src="assets/screenshots/13-money-map.png" alt="BaselineLab Money Map showing monthly income, transfers, card payments, and spending flows" loading="lazy"/><figcaption><b>Money Map</b><span>See regular money movements on one screen, with flow thickness proportional to monthly dollars.</span></figcaption></figure>
+              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Forecast screenshot full size"><img src="assets/screenshots/11-forecast-total.png" alt="BaselineLab total-cash Forecast with a 365-day horizon and no projected shortfalls" loading="lazy"/></button><figcaption><b>Forecast</b><span>Choose a horizon from 30 days to five years and see dated shortfall warnings.</span></figcaption></figure>
+              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Import preview screenshot full size"><img src="assets/screenshots/05-import-preview.png" alt="BaselineLab import preview classifying new and duplicate statement transactions" loading="lazy"/></button><figcaption><b>Import preview</b><span>Approve new transactions and review duplicates before anything is saved.</span></figcaption></figure>
+              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Recurring series screenshot full size"><img src="assets/screenshots/06-recurring.png" alt="BaselineLab recurring-series list with detected and confirmed income and expenses" loading="lazy"/></button><figcaption><b>Recurring series</b><span>Confirm what should enter the forecast and dismiss what should not.</span></figcaption></figure>
+              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Future events screenshot full size"><img src="assets/screenshots/07-future-events.png" alt="BaselineLab future-events list for planned income and expenses" loading="lazy"/></button><figcaption><b>Future events</b><span>Add the things you know are coming that history cannot show.</span></figcaption></figure>
+              <figure class="screenshot-slide"><button class="screenshot-open" type="button" aria-label="Open Money Map screenshot full size"><img src="assets/screenshots/13-money-map.png" alt="BaselineLab Money Map showing monthly income, transfers, card payments, and spending flows" loading="lazy"/></button><figcaption><b>Money Map</b><span>See regular money movements on one screen, with flow thickness proportional to monthly dollars.</span></figcaption></figure>
             </div>
           </div>
           <div class="screenshot-controls">
@@ -130,5 +130,23 @@
       <div><a href="#features">Features</a><a href="#workflow">How it works</a><a href="privacy.html">Privacy</a></div>
       <small>© <span id="year">2026</span> BaselineLab · Stillward Labs</small>
     </footer>
+
+    <dialog class="screenshot-lightbox" aria-labelledby="lightbox-title" aria-describedby="lightbox-description">
+      <div class="lightbox-shell">
+        <div class="lightbox-toolbar">
+          <div class="lightbox-copy">
+            <b id="lightbox-title"></b>
+            <span id="lightbox-description"></span>
+          </div>
+          <div class="lightbox-actions">
+            <button class="lightbox-zoom" type="button" aria-pressed="false">View actual size</button>
+            <button class="lightbox-close" type="button" aria-label="Close full-size screenshot">Close <span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+        <div class="lightbox-stage">
+          <img class="lightbox-image" src="" alt="" />
+        </div>
+      </div>
+    </dialog>
   </body>
 </html>

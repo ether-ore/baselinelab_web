@@ -113,3 +113,57 @@ if (screenshotViewport && screenshotSlides.length && screenshotPrevious && scree
 
   updateScreenshotControls(0);
 }
+
+const screenshotOpenButtons = document.querySelectorAll('.screenshot-open');
+const screenshotLightbox = document.querySelector('.screenshot-lightbox');
+const lightboxImage = document.querySelector('.lightbox-image');
+const lightboxTitle = document.querySelector('#lightbox-title');
+const lightboxDescription = document.querySelector('#lightbox-description');
+const lightboxStage = document.querySelector('.lightbox-stage');
+const lightboxZoom = document.querySelector('.lightbox-zoom');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+if (screenshotOpenButtons.length && screenshotLightbox && lightboxImage && lightboxTitle && lightboxDescription && lightboxStage && lightboxZoom && lightboxClose) {
+  const setLightboxZoom = (isZoomed) => {
+    lightboxStage.classList.toggle('is-zoomed', isZoomed);
+    lightboxZoom.setAttribute('aria-pressed', String(isZoomed));
+    lightboxZoom.textContent = isZoomed ? 'Fit to window' : 'View actual size';
+  };
+
+  const toggleLightboxZoom = () => {
+    setLightboxZoom(!lightboxStage.classList.contains('is-zoomed'));
+  };
+
+  screenshotOpenButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const image = button.querySelector('img');
+      const caption = button.closest('.screenshot-slide')?.querySelector('figcaption');
+      const title = caption?.querySelector('b')?.textContent.trim() || 'BaselineLab screenshot';
+      const description = caption?.querySelector('span')?.textContent.trim() || '';
+
+      if (!image) return;
+
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      lightboxTitle.textContent = title;
+      lightboxDescription.textContent = description;
+      setLightboxZoom(false);
+      screenshotLightbox.showModal();
+      document.body.classList.add('lightbox-open');
+      lightboxClose.focus();
+    });
+  });
+
+  lightboxZoom.addEventListener('click', toggleLightboxZoom);
+  lightboxImage.addEventListener('click', toggleLightboxZoom);
+  lightboxClose.addEventListener('click', () => screenshotLightbox.close());
+
+  screenshotLightbox.addEventListener('click', (event) => {
+    if (event.target === screenshotLightbox) screenshotLightbox.close();
+  });
+
+  screenshotLightbox.addEventListener('close', () => {
+    document.body.classList.remove('lightbox-open');
+    setLightboxZoom(false);
+  });
+}
